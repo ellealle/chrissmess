@@ -1,19 +1,14 @@
 const button = document.querySelector('button')
 
 const changeHeader = function() {
-  const p = document.querySelector('p#soMany')
+  const p = document.querySelector('h1#soHandsome')
   p.textContent = 'There\'s too many Chris\''
 }
 
 const changeHeaderDos = function() {
-    const p = document.querySelector('p#Marvel')
-    p.textContent = 'Where did they all come from?'
+    const p = document.querySelector('h2#soMany')
+    p.textContent = 'Where did they all even come from'
   }
-  const changePara = function() {
-    const p = document.querySelector('p#soHandsome')
-    p.textContent = 'Why are there so many Chris\', there aren\'t that many Matthew\'s or Micheal\'s, how did they tell them all apart for Infinity War'
-  }
-
+  
 button.addEventListener('click', changeHeader)
 button.addEventListener('click', changeHeaderDos)
-button.addEventListener('click', changePara)
