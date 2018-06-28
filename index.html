@@ -5,14 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Chrissmess</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
 </head>
 <body>
     <h1 id="soHandsome">A real mess of Chris'</h1>
     <h2 id="soMany">And why do most of them work for Marvel?</h2>
     <p id="how">There's Evans, Hemsworth, Pine, Pratt</p>
-    <button>Let's be real though</button>
+    
+    <button id="reallyTho">Let's be real though</button>
+    <br>
+    <form onsubmit="return false" id="chrisMovie">
+        <input
+          type="text"
+          name="chrisMovie"
+          placeholder="Enter a movie with a Chris"
+          autofocus
+        >
+        <button type="submit" id="buttonDos" onclick="addChris">A Spicy List</button>
+      </form>
+
+      <ul id="chris"></ul>
 
     <script src="index.js"></script>
 </body>
