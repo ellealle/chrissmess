@@ -8,20 +8,27 @@
     <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
 </head>
 <body>
-    <h1 id="soHandsome">A real mess of Chris'</h1>
-    <h2 id="soMany">And how come do most of them work for Marvel?</h2>
-    <p id="how">There's Evans, Hemsworth, Pine, Pratt</p>
+    <header>
+        <h1>Chrissmess</h1>
+        <h2>a whole mess of Chris'</h2>
+      </header>
     
-    <button id="reallyTho">Let's be real though</button>
-    <br>
-    <form onsubmit="return false" id="chrisMovie">
-        <input
-          type="text"
-          name="chrisMovie"
-          placeholder="Enter a movie with a Chris"
-          autofocus
-        >
-        <button type="submit" id="buttonDos" onclick="addChris">A Spicy List</button>
+      <form id="movieForm">
+        <div class="justTesting seriously">
+          <input
+            type="text"
+            name="movieName"
+            placeholder="Enter a Chris movie"
+            autofocus
+          >
+          <input
+            class="smaller"
+            type="text"
+            name="chrisName"
+            placeholder="Which Chris?"
+          >
+          <button type="submit">Update Heading</button>
+        </div>
       </form>
 
       <ul id="chris"></ul>

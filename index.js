@@ -1,31 +1,55 @@
-const button = document.querySelector('button')
-const buttonDos = document.querySelector('buttonDos')
-const form = document.querySelector('form#flickForm')
+class App {
+  constructor() {
+    this.list = document.querySelector('#movie')
 
-const changeHeader = function() {
-  const p = document.querySelector('h1#soHandsome')
-  p.textContent = 'There\'s too many Chris\''
+    this.movie = []
+    this.load()
+
+    const form = document.querySelector('form#movieForm')
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault()
+      this.handleSubmit(ev)
+    })
+  }
+
+  save() {
+    localStorage.setItem('movie', JSON.stringify(this.movie))
+  }
+
+  load() {
+    const movie = JSON.parse(localStorage.getItem('movie'))
+
+    if (movie) {
+      movie.forEach(movie => this.addMovie(movie))
+    }
+  }
+
+  renderProperty(name, value) {
+    const span = document.createElement('span')
+    span.classList.add(name)
+    span.textContent = value
+    return span
+  }
+
+  renderActionButtons(movie, item) {
+    const actions = document.createElement('div')
+    actions.classList.add('actions')
+
+  handleSubmit(ev) {
+    const f = ev.target
+
+    const movie = {
+      name: f.movieName.value,
+      chris: f.chrisName.value,
+      favorite: false,
+    }
+
+    this.addMovie(movie)
+    this.save()
+
+    f.reset()
+    f.movieName.focus()
+  }
 }
 
-const changeHeaderDos = function() {
-    const p = document.querySelector('h2#soMany')
-    p.textContent = 'Where did they all even come from'
-  }
-  
-const addChris = function(ev) {
-    ev.preventDefault()
-    const f = ev.target
-  
-    const chrisMovie = f.chrisMovie.value
-    const item = document.createElement('li')
-    item.textContent = chrisMovie
-  
-    const list = document.querySelector('#chrisn')
-    item.classList.add('')
-    list.appendChild(item)
-  
-    f.reset()
-  }
-button.addEventListener('click', changeHeader)
-button.addEventListener('click', changeHeaderDos)
-
+const app = new App()
